@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Go Out</title>
+		<title>GoOut</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -14,6 +14,11 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<link href="assets/css/datepicker.min.css" rel="stylesheet" type="text/css">
+		<style>
+		.selecionaprogramacao {
+			display:none;
+		}
+		</style>
 	</head>
 	<body>
 
@@ -53,13 +58,59 @@
 									<header class="major">
 										<h1>Selecione a data</h1>
 									</header>
-									<p><input type='text' class="datepicker-here" data-language="pt-BR" placeholder="Escolha uma data"/></p>
+									<p><input type='text' class="datepicker-here toggleprogramacao" data-language="pt-BR" placeholder="Escolha uma data"/></p>
 								</div>
+								<div class="inner">
+									<div class="table-wrapper selecionaprogramacao">
+										<h4>Disponibilidade</h4>
+										<table>
+											<thead>
+												<tr>
+													<th>Nome</th>
+													<th>Descrição</th>
+													<th>Informações</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Berttu's</td>
+													<td>A gastronomia brasileira seleta e variada servida em ambiente colonial requintado de mesas aconchegantes.</td>
+													<td><a class="button small">Saiba Mais</a></td>
+												</tr>
+												<tr>
+													<td>Museu Mariano Procópio</td>
+													<td>O Museu Mariano Procópio, localizado em Juiz de Fora, é o primeiro museu surgido em Minas Gerais. Fundado em 1915 por Alfredo Ferreira Lage, abriga um dos principais acervos do país, com aproximadamente 50 mil peças.</td>
+													<td><a class="button small">Saiba Mais</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="inner">
+										<div class="table-wrapper">
+											<h4>Programado</h4>
+											<table>
+												<thead>
+													<tr>
+														<th>Nome</th>
+														<th>Descrição</th>
+														<th>Informações</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Mr. Tugas</td>
+														<td>Fartas redondas doces e salgadas, drinques e cervejas, em casarão de arquitetura rústica e atmosfera boêmia.</td>
+														<td><a class="button small">Alterar</a></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 							</section>
-
 					</div>
 
-				<!-- Contact -->
+				<!-- Contact 
 					<section id="contact">
 						<div class="inner">
 							<section>
@@ -96,7 +147,7 @@
 							</section>
 						</div>
 					</section>
-
+-->
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
@@ -127,6 +178,13 @@
         	
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script>
+			$picker = $('.toggleprogramacao');
+			$picker.datepicker({
+				onSelect: function onSelect(fd, date) {
+					$('.selecionaprogramacao').toggle();
+				}
+			});
+			</script>
 	</body>
 </html>
