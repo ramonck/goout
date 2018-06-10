@@ -9,7 +9,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<style>
-		.fastmenupg2, .fastmenupg3{
+		.fastmenupg2, .fastmenupg3, .searchdiv{
 			display:none;
 		}
 		</style>
@@ -23,6 +23,7 @@
 					<header id="header" class="alt">
 						<a href="index.html" class="logo"><img src="images/logo-goout.png" height="45"> <span>Compartilhe experiências</span></a>
 						<nav>
+							<a href="#" class="icon fa-search searchtoggle">&nbsp;</a><div class="searchdiv"><input type="text" placeholder="Pesquise aqui"/></div>
 							<div class="select-wrapper"><select><option>Juiz de Fora</option></select></div>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -228,6 +229,9 @@
 			$('.fastmenutoggle3').click(function(){
 				$('.fastmenupg3').toggle();
 				$(this).parent().toggle();
+			});
+			$('.searchtoggle').click(function(){
+				$('.searchdiv').toggle();
 			});
 			var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));  
 			if (!mobile) { 
