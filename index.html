@@ -8,6 +8,11 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style>
+		.fastmenupg2, .fastmenupg3{
+			display:none;
+		}
+		</style>
 	</head>
 	<body>
 
@@ -56,9 +61,9 @@
 				<!-- Main -->
 					<div id="main">
 						<section>
-								<div><a href="#" class="button small">Festa/Show</a><a href="#" class="button small">Cervejarias</a><a href="#" class="button small">></a></div>
-								<div><a href="#" class="button small"><</a><a href="#" class="button small">Gastronômico</a><a href="#" class="button small">Eventos</a><a href="#" class="button small">Artesanato</a><a href="#" class="button small">></a></div>
-								<div><a href="#" class="button small"><</a><a href="#" class="button small">Atrativos turísticos</a></div>
+								<div class="fastmenupg1"><a class="button small">Festa/Show</a><a class="button small">Cervejarias</a><a class="button small fastmenutoggle2">></a></div>
+								<div class="fastmenupg2"><a class="button small fastmenutoggle1"><</a><a class="button small">Gastronômico</a><a class="button small">Eventos</a><a class="button small fastmenutoggle3">></a></div>
+								<div class="fastmenupg3"><a class="button small fastmenutoggle2"><</a><a class="button small">Artesanato</a><a class="button small">Atrativos turísticos</a></div>
 						</section>
 						<!-- One -->
 							<section id="one" class="tiles">
@@ -210,6 +215,19 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script>
+			$('.fastmenutoggle1').click(function(){
+				$('.fastmenupg1').toggle();
+				$(this).parent().toggle();
+			});
+			$('.fastmenutoggle2').click(function(){
+				$('.fastmenupg2').toggle();
+				$(this).parent().toggle();
+			});
+			$('.fastmenutoggle3').click(function(){
+				$('.fastmenupg3').toggle();
+				$(this).parent().toggle();
+			});
+			</script>
 	</body>
 </html>
