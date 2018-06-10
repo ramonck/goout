@@ -6,13 +6,19 @@
 -->
 <html>
 	<head>
-		<title>Go Out</title>
+		<title>GoOut</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link href="assets/css/datepicker.min.css" rel="stylesheet" type="text/css">
+		<style>
+		.selecionaprogramacao {
+			display:none;
+		}
+		</style>
 	</head>
 	<body>
 
@@ -50,16 +56,83 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>ACADEMIA DO SKATE</h1>
+										<h1>Selecione a data do evento</h1>
 									</header>
-									<span class="image main"><img src="images/skate.jpg" alt="" /></span>
-									<p>A academia oferece aulas e palestras gratuitas de terça a domingo sendo que o skatista hexacampeão mundial Sandro Dias,é o padrinho do evento.</p>
+									<p><input type='text' class="datepicker-here toggleprogramacao" data-language="pt-BR" placeholder="Escolha uma data"/></p>
+								</div>
+								<div class="inner">
+									<div class="table-wrapper selecionaprogramacao">
+										<h4>Outros eventos na mesma data</h4>
+										<table>
+											<thead>
+												<tr>
+													<th>Nome</th>
+													<th>Data</th>
+													<th>Informações</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Sextaveja</td>
+													<td>12/07/2018</td>
+													<td><a class="button small">Saiba Mais</a></td>
+												</tr>
+												<tr>
+													<td>Pagode 123</td>
+													<td>12/07/2018</td>
+													<td><a class="button small">Saiba Mais</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</section>
-
+							<section>
+								
+								<div class="inner">
+									<form method="post" action="reservar.html">
+									<div class="field">
+										<label for="name">Nome</label>
+										<input type="text" name="name" id="name">
+									</div><br/>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email">
+									</div><br/>
+									<div class="field">
+										<label for="email">CNPJ</label>
+										<input type="text" name="cnpj" id="cnpj">
+									</div><br/>
+									<div class="field">
+										<label for="email">Endereço</label>
+										<input type="text" name="endereco" id="endereco">
+									</div><br/>
+									<div class="field">
+										<label for="email">Cidade</label>
+										<div class="select-wrapper"><select name="cidade"><option>Juiz de Fora</option></select></div>
+									</div><br/>
+									<div class="field">
+										<label for="email">Estado</label>
+										<div class="select-wrapper"><select name="estado"><option>Minas Gerais</option></select></div>
+									</div><br/>
+									<div class="field">
+										<label for="email">Site</label>
+										<input type="text" name="site" id="site">
+									</div><br/>
+									<div class="field">
+										<label for="email">Imagem do Evento</label>
+										<input type="file" name="imagem" id="imagem">
+									</div><br/>
+									<ul class="actions">
+											<li><input type="submit" value="Enviar" class="special" /></li>
+											<li><input type="reset" value="Voltar" /></li>
+									</ul>
+									</form>
+								</div>
+							</section>
 					</div>
 
-				<!-- Contact -->
+				<!-- Contact 
 					<section id="contact">
 						<div class="inner">
 							<section>
@@ -96,9 +169,7 @@
 							</section>
 						</div>
 					</section>
-					<section>
-							<center><a href="#" class="button icon fa-star">Favoritar</a> <a href="#" class="button icon fa-share-alt">Compartilhar</a></center>
-					</section>
+-->
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
@@ -123,8 +194,19 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/datepicker.min.js"></script>
+			<!-- Include English language -->
+			<script src="assets/js/i18n/datepicker.pt-BR.js"></script>
+        	
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script>
+			$picker = $('.toggleprogramacao');
+			$picker.datepicker({
+				onSelect: function onSelect(fd, date) {
+					$('.selecionaprogramacao').toggle();
+				}
+			});
+			</script>
 	</body>
 </html>
