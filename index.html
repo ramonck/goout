@@ -60,7 +60,7 @@
 
 				<!-- Main -->
 					<div id="main">
-						<section>
+						<section class="fastmenu">
 								<div class="fastmenupg1"><a class="button small">Festa/Show</a><a class="button small">Cervejarias</a><a class="button small fastmenutoggle2">></a></div>
 								<div class="fastmenupg2"><a class="button small fastmenutoggle1"><</a><a class="button small">Gastronômico</a><a class="button small">Eventos</a><a class="button small fastmenutoggle3">></a></div>
 								<div class="fastmenupg3"><a class="button small fastmenutoggle2"><</a><a class="button small">Artesanato</a><a class="button small">Atrativos turísticos</a></div>
@@ -228,6 +228,10 @@
 				$('.fastmenupg3').toggle();
 				$(this).parent().toggle();
 			});
+			var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));  
+			if (!mobile) { 
+				$('.fastmenu').css('display', 'none');
+			}
 			</script>
 	</body>
 </html>
